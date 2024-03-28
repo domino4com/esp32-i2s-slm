@@ -37,7 +37,8 @@
  * Displays line on the small OLED screen with 'short' LAeq(125ms)
  * response and numeric LAeq(1sec) dB value from the signal RMS.
  */
-
+#include <cmath>
+#include <cstring>
 #include <driver/i2s.h>
 #include "sos-iir-filter.h"
 
@@ -74,9 +75,9 @@ constexpr double MIC_REF_AMPL = pow(10, double(MIC_SENSITIVITY)/20) * ((1<<(MIC_
 //
 // Below ones are just example for my board layout, put here the pins you will use
 //
-#define I2S_WS            18 
-#define I2S_SCK           23 
-#define I2S_SD            19 
+// #define I2S_WS            18 
+// #define I2S_SCK           23 
+// #define I2S_SD            19 
 
 // I2S peripheral to use (0 or 1)
 #define I2S_PORT          I2S_NUM_0
@@ -87,9 +88,9 @@ constexpr double MIC_REF_AMPL = pow(10, double(MIC_SENSITIVITY)/20) * ((1<<(MIC_
 #if (USE_DISPLAY > 0)
   // ThingPulse/esp8266-oled-ssd1306, you may need the latest source and PR#198 for 64x48
   #include <SSD1306Wire.h>
-  #define OLED_GEOMETRY     GEOMETRY_64_48
+  // #define OLED_GEOMETRY     GEOMETRY_64_48
   //#define OLED_GEOMETRY GEOMETRY_128_32
-  //#define OLED_GEOMETRY GEOMETRY_128_64
+  #define OLED_GEOMETRY GEOMETRY_128_64
   #define OLED_FLIP_V       1
   SSD1306Wire display(0x3c, SDA, SCL, OLED_GEOMETRY);
 #endif

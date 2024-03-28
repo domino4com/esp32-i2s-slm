@@ -15,3 +15,5 @@ Theoretically, i.e. with factory calibrated ICS-4343x, this should get you ±1dB
 The code in this repository is mostly intended as example how you can integrate resonable noise measurement (i.e. *L*<sub>Aeq</sub>, Equivalent Continuous Sound Level) in your projects. 
 
 You can find a bit more information in my [hackday.io](https://hackaday.io/project/166867-esp32-i2s-slm) project.
+
+[MEMS Microphone Datasheet](https://invensense.tdk.com/wp-content/uploads/2016/02/DS-000069-ICS-43434-v1.2.pdf)
